@@ -2,8 +2,8 @@
   "project": "Omkar-Ai",
   "current_version": "3.0.0",
   "downloads": {
-    "installer": "downloads/Omkar-Ai-Setup-3.0.0.exe",
-    "portable": "downloads/Omkar-Ai-3.0.0-portable.zip"
+    "installer": "https://github.com/omkarchauhan9795-byte/omkar-ai/releases/download/v3.0.0/Omkar-Ai-Setup-3.0.0.exe",
+    "portable": "https://github.com/omkarchauhan9795-byte/omkar-ai/releases/download/v3.0.0/Omkar-Ai-3.0.0-portable.zip"
   },
   "versions": [
     {
