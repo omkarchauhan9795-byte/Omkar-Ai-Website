@@ -1,0 +1,48 @@
+{
+  "name": "Omkar-Ai",
+  "short_name": "Omkar-Ai",
+  "description": "A voice-first, OS-level AI assistant with persistent memory, desktop control, subagents, and deterministic safety guardrails.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#04070d",
+  "theme_color": "#04070d",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assets/img/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/img/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/img/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "apple touch icon"
+    }
+  ],
+  "categories": ["productivity", "utilities"],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Download",
+      "short_name": "Download",
+      "description": "Download Omkar-Ai v3.0.0 for Windows",
+      "url": "/download.html",
+      "icons": [{ "src": "assets/img/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Documentation",
+      "short_name": "Docs",
+      "description": "Read the full documentation",
+      "url": "/docs.html",
+      "icons": [{ "src": "assets/img/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}

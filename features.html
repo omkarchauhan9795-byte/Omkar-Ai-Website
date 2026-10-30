@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Features — Omkar-Ai</title>
+  <meta name="description" content="Explore Omkar-Ai: live voice, persistent Hermes Memory, desktop automation, subagents, deterministic safety guardrails, and MCP extensibility.">
+  <meta name="theme-color" content="#04070d">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Features — Omkar-Ai">
+  <meta property="og:description" content="Live voice, persistent memory, real desktop control, subagents, safety guardrails, and MCP extensibility.">
+  <meta property="og:image" content="assets/img/og-cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <script>document.documentElement.classList.remove("no-js");</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon-sprite" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m0 0 5-5m-5 5-5-5M5 21h14"/></symbol>
+    <symbol id="i-windows" viewBox="0 0 24 24"><path d="M3.5 5.5 10.5 4.5v7h-7zM13.5 4.2 20.5 3v8.5h-7zM3.5 13.5h7v7l-7-1zM13.5 13.5h7V21l-7-1z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 20 6v5c0 5-3.4 8.4-8 10-4.6-1.6-8-5-8-10V6z"/><path d="m8.5 12 2.3 2.3L16 9.5"/></symbol>
+    <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3M10 10h4v4h-4z"/></symbol>
+    <symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="5.5" rx="8" ry="3"/><path d="M4 5.5v13c0 1.7 3.6 3 8 3s8-1.3 8-3v-13M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></symbol>
+    <symbol id="i-cursor" viewBox="0 0 24 24"><path d="m4 3 15 8.5-6.3 1.7L9 20z"/><path d="M13 14.5 19 21M18 4l1-2M21 8l2-1M4 15l-2 1"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></symbol>
+    <symbol id="i-plug" viewBox="0 0 24 24"><path d="M9 2v6M15 2v6M6 8h12v3a6 6 0 0 1-12 0zM12 17v5"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10v2a7 7 0 0 0 14 0v-2M12 19v3"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-terminal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3M13 15h4"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/></symbol>
+    <symbol id="i-warn" viewBox="0 0 24 24"><path d="M12 3 22 20H2z"/><path d="M12 9v5M12 17h.01"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
+    <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><path d="M3 7h4l2-3h6l2 3h4v13H3z"/><circle cx="12" cy="13" r="4"/></symbol>
+    <symbol id="i-message" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-8 8H4l2-4a8 8 0 1 1 15-4z"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.5 3.8 9S14.5 18.5 12 21c-2.5-2.5-3.8-5.5-3.8-9S9.5 5.5 12 3z"/></symbol>
+    <symbol id="i-wave" viewBox="0 0 24 24"><path d="M2 12h2l2-6 3 12 3-15 3 18 2-9h3"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7z"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 6a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 9 5-9 5-9-5zM3 12l9 5 9-5M3 17l9 5 9-5"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="m11 12 8-8M16 7l2 2M14 9l2 2"/></symbol>
+    <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></symbol>
+  </svg>
+
+  <header class="site-header" data-header>
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="Omkar-Ai home">
+        <img src="assets/img/logo.svg" alt="" width="34" height="34">
+        <span class="brand-text">OMKAR<span>-AI</span></span>
+      </a>
+      <nav class="nav" id="site-nav" aria-label="Primary">
+        <a href="features.html">Features</a>
+        <a href="download.html">Download</a>
+        <a href="docs.html">Docs</a>
+        <a href="changelog.html">Changelog</a>
+        <a href="about.html">About</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-ghost nav-download" href="download.html">Download <span>v3.0.0</span></a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-hero-side">
+          <div>
+            <div class="eyebrow">The deep dive</div>
+            <h1>Not a chatbot.<br>An <em>operating layer.</em></h1>
+            <p class="lead">
+              Omkar-Ai connects a live voice model, a persistent memory, and real desktop hands
+              into one loop. The result isn't a text box that knows things — it's an assistant
+              that can do things, remember them, and explain itself.
+            </p>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="download.html">
+                <svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg>
+                Download v3.0.0
+              </a>
+              <a class="btn btn-secondary" href="#safety">
+                See the safety model
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>
+              </a>
+            </div>
+            <div class="page-hero-meta">
+              <span class="tag tag-cyan">6 system pillars</span>
+              <span class="tag">18 built-in skills</span>
+              <span class="tag tag-green">Local-first memory</span>
+            </div>
+          </div>
+          <div class="page-hero-aside" aria-label="Feature summary">
+            <div><span>VOICE</span><b>Gemini Live</b></div>
+            <div><span>MEMORY</span><b>SQLite FTS5</b></div>
+            <div><span>CONTROL</span><b>Desktop + UI</b></div>
+            <div><span>SAFETY</span><b>Deterministic</b></div>
+            <div><span>EXTEND</span><b>MCP + plugins</b></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="pillars-title">
+      <div class="container">
+        <div class="section-head">
+          <div data-reveal>
+            <div class="eyebrow">Six pillars</div>
+            <h2 class="section-title" id="pillars-title">The whole system, <span class="dim">end to end.</span></h2>
+          </div>
+          <p class="section-lead section-head-side" data-reveal style="--delay:.08s">
+            Every layer is designed to cover the one beside it: a fallback brain, a durable memory,
+            guarded hands, parallel workers, and an open tool bus.
+          </p>
+        </div>
+
+        <div class="feature-rows">
+          <article class="feature-row" id="brain">
+            <div class="feature-copy" data-reveal>
+              <div class="feature-kicker"><span>01</span> Dual-engine intelligence</div>
+              <h2>A brain with a fallback plan.</h2>
+              <p>
+                Real-time conversation runs on Gemini Live, with Extended Thinking for hard problems
+                and Affective Dialog for replies that sound human. When a live model hits a quota or
+                a timeout, the router moves the job to another provider instead of dropping it.
+              </p>
+              <ul class="feature-list">
+                <li>4-rung Gemini Live ladder</li>
+                <li>5-provider REST router</li>
+                <li>Extended thinking budget</li>
+                <li>Quota + cooldown handling</li>
+                <li>Emotional voice prosody</li>
+                <li>Automatic fallback</li>
+              </ul>
+            </div>
+            <div class="feature-visual" data-reveal style="--delay:.08s">
+              <div class="mock-panel">
+                <div class="mock-head"><span>MODEL ROUTER</span><b>ONLINE · 6 PROVIDERS</b></div>
+                <div class="model-ladder">
+                  <div class="model-row is-active"><i>A</i><span>Gemini 3.8 Live · Extended Thinking</span><b>ACTIVE</b></div>
+                  <div class="model-row"><i>B</i><span>Gemini 3.8 Live</span><b class="standby">STANDBY</b></div>
+                  <div class="model-row"><i>C</i><span>Gemini 3.1 Flash Live</span><b class="standby">STANDBY</b></div>
+                  <div class="model-row"><i>D</i><span>Gemini 2.5 Flash · native audio</span><b class="standby">STANDBY</b></div>
+                </div>
+                <div class="mock-divider"></div>
+                <div class="mock-head"><span>BACKGROUND ROUTER</span><b class="is-cyan">READY</b></div>
+                <div class="model-ladder">
+                  <div class="model-row"><i>G</i><span>Groq · Llama 3.3</span><b>READY</b></div>
+                  <div class="model-row"><i>O</i><span>OpenRouter · Claude / GPT</span><b>READY</b></div>
+                  <div class="model-row"><i>M</i><span>Mistral · NVIDIA · HuggingFace</span><b>READY</b></div>
+                </div>
+                <div class="hand-terminal"><span class="dim">router ›</span> primary quota exhausted · failover in 0.4s<br><span class="ok">✓ conversation uninterrupted</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="feature-row" id="memory">
+            <div class="feature-copy" data-reveal>
+              <div class="feature-kicker"><span>02</span> Hermes Memory</div>
+              <h2>A memory that compounds.</h2>
+              <p>
+                Facts, preferences, past sessions, and learned procedures live in a local store you
+                can inspect and delete. The prompt carries an index; the full record is fetched only
+                when it matters. Nothing is silently forgotten between launches.
+              </p>
+              <ul class="feature-list">
+                <li>SQLite FTS5 search</li>
+                <li>MEMORY.md + USER.md</li>
+                <li>Session-filtered history</li>
+                <li>On-demand recall tool</li>
+                <li>Self-learning SKILL.md</li>
+                <li>Delete-to-forget control</li>
+              </ul>
+            </div>
+            <div class="feature-visual" data-reveal style="--delay:.08s">
+              <div class="mock-panel">
+                <div class="mock-head"><span>HERMES MEMORY</span><b class="is-cyan">INDEX LOADED</b></div>
+                <div class="memory-search"><span>⌕</span><span>recall: “launch date + owner”</span></div>
+                <div class="memory-results">
+                  <div class="memory-result"><b>USER.MD · 2026-10-24</b><span>“Launch moved to Friday. Aadesh owns the landing page.”</span></div>
+                  <div class="memory-result"><b>SESSION 06 · 2026-10-22</b><span>“Prefers short morning briefings with three priorities.”</span></div>
+                  <div class="memory-result"><b>SKILL · summarize-vault</b><span>6 steps · learned from a completed Obsidian task.</span></div>
+                </div>
+                <div class="hand-terminal"><span class="dim">memory ›</span> 3 matches · 1.2 KB recalled · prompt budget intact</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="feature-row" id="hands">
+            <div class="feature-copy" data-reveal>
+              <div class="feature-kicker"><span>03</span> Stonic Body</div>
+              <h2>Real hands. Real guardrails.</h2>
+              <p>
+                Omkar-Ai can launch an app, move a file, click a button, type into a form, or run a
+                browser workflow. Background UI automation can operate windows without taking your
+                pointer hostage. Human Esc always wins.
+              </p>
+              <ul class="feature-list">
+                <li>DPI-aware mouse + keyboard</li>
+                <li>Background UI automation</li>
+                <li>File and folder operations</li>
+                <li>Browser workflows</li>
+                <li>Animated AI cursor</li>
+                <li>Human-vs-agent Esc guard</li>
+              </ul>
+            </div>
+            <div class="feature-visual" data-reveal style="--delay:.08s">
+              <div class="mock-panel">
+                <div class="mock-head"><span>DESKTOP CONTROL</span><b>SAFE MODE</b></div>
+                <div class="hand-path">
+                  <svg viewBox="0 0 440 160" aria-hidden="true">
+                    <path class="path-line" d="M44 40 C 120 18, 150 126, 222 92 S 340 42, 392 112"/>
+                    <circle class="path-node" cx="44" cy="40" r="3"/>
+                    <circle class="path-node" cx="222" cy="92" r="3"/>
+                    <circle class="path-node end" cx="392" cy="112" r="3"/>
+                  </svg>
+                  <span class="hand-cursor"></span>
+                  <span class="hand-path-label">pywinauto · background input</span>
+                </div>
+                <div class="hand-terminal"><span class="dim">you ›</span> click Save in Notepad<br><span class="ok">✓</span> clicked in background · pointer never moved<br><span class="dim">you ›</span> wait, undo that<br><span class="ok">✓</span> checkpoint restored</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="feature-row" id="team">
+            <div class="feature-copy" data-reveal>
+              <div class="feature-kicker"><span>04</span> Subagent delegation</div>
+              <h2>Parallel work, one conversation.</h2>
+              <p>
+                Hand a long job to an isolated background worker with its own context, tool allow-list,
+                safety guard, and planner. The parent conversation stays focused while the workers
+                search, read, and report back with a summary.
+              </p>
+              <ul class="feature-list">
+                <li>Isolated worker contexts</li>
+                <li>Per-task tool allow-lists</li>
+                <li>Guard enforced inside workers</li>
+                <li>Explicit tool planning</li>
+                <li>Keyword routing</li>
+                <li>Parent stays responsive</li>
+              </ul>
+            </div>
+            <div class="feature-visual" data-reveal style="--delay:.08s">
+              <div class="mock-panel">
+                <div class="mock-head"><span>SUBAGENT MANAGER</span><b>3 WORKERS</b></div>
+                <div class="subagent-grid">
+                  <div class="subagent-card is-lead">
+                    <header><span>PARENT · OMKAR-AI</span><b>ONLINE</b></header>
+                    <p>“Research three vendors, compare pricing, and bring back a one-paragraph recommendation.”</p>
+                    <div class="mini-bars"><i></i><i></i><i></i><i></i><i></i></div>
+                  </div>
+                  <div class="subagent-card">
+                    <header><span>WORKER 01</span><b>RUNNING</b></header>
+                    <p>Reading vendor pages · 6 sources</p>
+                    <div class="mini-bars"><i></i><i></i><i></i><i></i><i></i></div>
+                  </div>
+                  <div class="subagent-card">
+                    <header><span>WORKER 02</span><b>RUNNING</b></header>
+                    <p>Comparing pricing tables</p>
+                    <div class="mini-bars"><i></i><i></i><i></i><i></i><i></i></div>
+                  </div>
+                </div>
+                <div class="hand-terminal"><span class="dim">subagent ›</span> 2 summaries returned · parent context clean</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="feature-row" id="safety">
+            <div class="feature-copy" data-reveal>
+              <div class="feature-kicker"><span>05</span> Safety Guard</div>
+              <h2>The model can ask. Only you can approve.</h2>
+              <p>
+                Safety is deterministic, not a suggestion in a prompt. Exact rules decide whether an
+                action is denied, allowed, or paused for a human. A confirmation token is issued by
+                the UI — the model cannot mint one or approve its own request.
+              </p>
+              <ul class="feature-list">
+                <li>Deny / confirm / allow rules</li>
+                <li>UI-issued confirmation token</li>
+                <li>Backups before destructive ops</li>
+                <li>50-checkpoint history</li>
+                <li>Undo restores real files</li>
+                <li>Esc stops the agent, not you</li>
+              </ul>
+            </div>
+            <div class="feature-visual" data-reveal style="--delay:.08s">
+              <div class="safety-demo" data-safety-demo>
+                <div class="demo-bar">
+                  <span>SAFETY GUARD // LIVE DEMO</span>
+                  <span>HUMAN REQUIRED</span>
+                </div>
+                <div class="demo-body">
+                  <div class="demo-command"><span>›</span><code>delete C:\Users\you\Downloads\**</code></div>
+                  <div class="demo-rules" aria-label="Guard decision types">
+                    <span class="demo-rule deny">DENY</span>
+                    <span class="demo-rule confirm">CONFIRM</span>
+                    <span class="demo-rule allow">ALLOW</span>
+                  </div>
+                  <button class="btn btn-secondary btn-block" type="button" data-demo-trigger aria-expanded="false">
+                    Run this request
+                    <svg class="icon" aria-hidden="true"><use href="#i-play"></use></svg>
+                  </button>
+                  <div class="demo-confirm" data-demo-confirm hidden>
+                    <div class="demo-confirm-title">
+                      <svg class="icon" aria-hidden="true"><use href="#i-warn"></use></svg>
+                      CONFIRMATION REQUIRED
+                    </div>
+                    <p>This would remove 1,248 files. A checkpoint will be created before anything changes.</p>
+                    <div class="demo-confirm-actions">
+                      <button class="demo-btn danger" type="button" data-demo-yes>YES, DO IT</button>
+                      <button class="demo-btn" type="button" data-demo-cancel>CANCEL</button>
+                    </div>
+                  </div>
+                  <div class="demo-log" data-demo-log aria-live="polite">Waiting for a request…</div>
+                </div>
+              </div>
+              <div class="hand-terminal" style="margin-top:10px"><span class="dim">guard ›</span> deterministic rules · no model override · every change reversible</div>
+            </div>
+          </article>
+
+          <article class="feature-row" id="mcp">
+            <div class="feature-copy" data-reveal>
+              <div class="feature-kicker"><span>06</span> Extensibility</div>
+              <h2>Your tools, on the bus.</h2>
+              <p>
+                Speak Model Context Protocol and Omkar-Ai can call external tools from stdio servers
+                — SQLite, filesystem, Slack, Drive, or your own. Add a plugin for a one-off skill, or
+                let the learning loop write a reusable SKILL.md from a task it just solved.
+              </p>
+              <ul class="feature-list">
+                <li>MCP stdio client</li>
+                <li>Prefixed external tools</li>
+                <li>Per-server configuration</li>
+                <li>Plugin loader with isolation</li>
+                <li>Auto-written skills</li>
+                <li>Progressive disclosure</li>
+              </ul>
+            </div>
+            <div class="feature-visual" data-reveal style="--delay:.08s">
+              <div class="mock-panel">
+                <div class="mock-head"><span>MCP TOOL BUS</span><b class="is-cyan">4 SERVERS</b></div>
+                <div class="mcp-map">
+                  <svg viewBox="0 0 440 190" aria-hidden="true">
+                    <line class="mcp-link" x1="220" y1="95" x2="70" y2="42"/>
+                    <line class="mcp-link" x1="220" y1="95" x2="370" y2="42"/>
+                    <line class="mcp-link" x1="220" y1="95" x2="70" y2="148"/>
+                    <line class="mcp-link" x1="220" y1="95" x2="370" y2="148"/>
+                    <circle class="mcp-node core" cx="220" cy="95" r="42"/>
+                    <text class="mcp-label core" x="220" y="93" text-anchor="middle">OMKAR-AI</text>
+                    <text class="mcp-label core" x="220" y="104" text-anchor="middle">MCP CLIENT</text>
+                    <circle class="mcp-node" cx="70" cy="42" r="28"/>
+                    <text class="mcp-label" x="70" y="42" text-anchor="middle">SQLITE</text>
+                    <circle class="mcp-node" cx="370" cy="42" r="28"/>
+                    <text class="mcp-label" x="370" y="42" text-anchor="middle">FILES</text>
+                    <circle class="mcp-node" cx="70" cy="148" r="28"/>
+                    <text class="mcp-label" x="70" y="148" text-anchor="middle">SLACK</text>
+                    <circle class="mcp-node" cx="370" cy="148" r="28"/>
+                    <text class="mcp-label" x="370" y="148" text-anchor="middle">DRIVE</text>
+                  </svg>
+                </div>
+                <div class="mcp-bottom">
+                  <span>query_db()</span><span>list_files()</span><span>send_message()</span><span>search_drive()</span>
+                </div>
+                <div class="hand-terminal" style="margin-top:10px"><span class="dim">mcp ›</span> 4 servers connected · 12 tools exposed · reload on “reconnect”</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-line" id="capabilities" aria-labelledby="capabilities-title">
+      <div class="container">
+        <div class="section-head">
+          <div data-reveal>
+            <div class="eyebrow">Capability matrix</div>
+            <h2 class="section-title" id="capabilities-title">Eighteen skills <span class="dim">out of the box.</span></h2>
+          </div>
+          <p class="section-lead section-head-side" data-reveal style="--delay:.08s">
+            Each action self-describes its tools and handler, so adding a new one is a file drop —
+            not a rewrite of the agent.
+          </p>
+        </div>
+
+        <div class="capability-grid">
+          <article class="cap-card" data-reveal>
+            <div class="cap-icon"><svg class="icon" aria-hidden="true"><use href="#i-mic"></use></svg></div>
+            <h3>Voice conversation</h3>
+            <p>Streaming audio both ways, barge-in, echo guard, 35 HD voices, and emotional delivery.</p>
+            <code>gemini-live</code>
+          </article>
+          <article class="cap-card" data-reveal style="--delay:.04s">
+            <div class="cap-icon"><svg class="icon" aria-hidden="true"><use href="#i-eye"></use></svg></div>
+            <h3>Screen vision</h3>
+            <p>Capture a screen, attach labels, and ask about the live app, document, or error in front of you.</p>
+            <code>screen_processor</code>
+          </article>
+          <article class="cap-card" data-reveal style="--delay:.08s">
+            <div class="cap-icon"><svg class="icon" aria-hidden="true"><use href="#i-camera"></use></svg></div>
+            <h3>Webcam vision</h3>
+            <p>See the room, not just the screen. Motion-triggered watching can save a snapshot and speak up.</p>
+            <code>security_camera</code>
+          </article>
+          <article class="cap-card" data-reveal>
+            <div class="cap-icon"><svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg></div>
+            <h3>Web search</h3>
+            <p>Parallel search for news, prices, comparisons, and research — with source links kept in the answer.</p>
+            <code>web_search</code>
+          </article>
+          <article class="cap-card" data-reveal style="--delay:.04s">
+            <div class="cap-icon"><svg class="icon" aria-hidden="true"><use href="#i-globe"></use></svg></div>
+            <h3>Browser control</h3>
+            <p>Navigate, click, fill, and scrape through a real browser workflow instead of a one-shot HTTP call.</p>
+            <code>browser_control</code>
+          </article>
+          <article class="cap-card" data-reveal style="--delay:.08s">
+            <div class="cap-icon"><svg class="icon" aria-hidden="true"><use href="#i-folder"></use></svg></div>
+            <h3>File operations</h3>
+            <p>Find, read, copy, move, compress, extract, and bulk-delete — confined to safe roots and backed up.</p>
+            <code>file_controller</code>
+          </article>
+          <article class="cap-card" data-reveal>
+            <div class="cap-icon"><svg class="icon" aria-hidden="true"><use href="#i-grid"></use></svg></div>
+            <h3>App launcher</h3>
+            <p>Open the right application by name, with a per-OS name map that covers the usual suspects.</p>
+            <code>open_app</code>
+          </article>
+          <article class="cap-card" data-reveal style="--delay:.04s">
+            <div class="cap-icon"><svg class="icon" aria-hidden="true"><use href="#i-monitor"></use></svg></div>
+            <h3>Computer settings</h3>
+            <p>Volume, brightness, Wi-Fi, and power controls, resolved through the native OS interface.</p>
+            <code>computer_settings</code>
+          </article>
+          <article class="cap-card" data-reveal style="--delay:.08s">
+            <div class="cap-icon"><svg class="icon" aria-hidden="true"><use href="#i-cursor"></use></svg></div>
+            <h3>Window control</h3>
+            <p>Focus, move, resize, and manage windows. Background UI automation keeps your pointer free.</p>
+            <code>computer_control</code>
+          </article>
+          <article class="cap-card" data-reveal>
+            <div class="cap-icon"><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg></div>
+            <h3>Reminders</h3>
+            <p>OS-native scheduled notifications that survive the session, set by voice or typed command.</p>
+            <code>reminder</code>
+          </article>
+          <article class="cap-card" data-reveal style="--delay:.04s">
+            <div class="cap-icon"><svg class="icon" aria-hidden="true"><use href="#i-wave"></use></svg></div>
+            <h3>Weather</h3>
+            <p>Live conditions and forecasts, delivered conversationally or folded into a morning briefing.</p>
+            <code>weather_report</code>
+          </article>
+          <article class="cap-card" data-reveal style="--delay:.08s">
+            <div class="cap-icon"><svg class="icon" aria-hidden="true"><use href="#i-play"></use></svg></div>
+            <h3>Video playback</h3>
+            <p>Play a video on the HUD or open a YouTube result without leaving the assistant's flow.</p>
+            <code>video_player</code>
+          </article>
+          <article class="cap-card" data-reveal>
+            <div class="cap-icon"><svg class="icon" aria-hidden="true"><use href="#i-file"></use></svg></div>
+            <h3>Obsidian notes</h3>
+            <p>List, read, search, create, and append Markdown notes inside a vault — with path confinement.</p>
+            <code>obsidian_notes</code>
+          </article>
+          <article class="cap-card" data-reveal style="--delay:.04s">
+            <div class="cap-icon"><svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg></div>
+            <h3>Subagent delegation</h3>
+            <p>Spin up isolated workers for long research, scraping, or multi-step file jobs and get summaries.</p>
+            <code>delegate_task</code>
+          </article>
+          <article class="cap-card" data-reveal style="--delay:.08s">
+            <div class="cap-icon"><svg class="icon" aria-hidden="true"><use href="#i-cpu"></use></svg></div>
+            <h3>System monitor</h3>
+            <p>CPU, RAM, GPU, temperature, and process telemetry displayed in the HUD and available as a tool.</p>
+            <code>system_monitor</code>
+          </article>
+          <article class="cap-card" data-reveal>
+            <div class="cap-icon"><svg class="icon" aria-hidden="true"><use href="#i-message"></use></svg></div>
+            <h3>Messaging</h3>
+            <p>Compose and send messages through the configured channel without retyping context you already gave.</p>
+            <code>send_message</code>
+          </article>
+          <article class="cap-card" data-reveal style="--delay:.04s">
+            <div class="cap-icon"><svg class="icon" aria-hidden="true"><use href="#i-shield"></use></svg></div>
+            <h3>Checkpoints &amp; undo</h3>
+            <p>Every destructive file operation gets a timestamped backup. Restore it with one request.</p>
+            <code>checkpoint_rollback</code>
+          </article>
+          <article class="cap-card" data-reveal style="--delay:.08s">
+            <div class="cap-icon"><svg class="icon" aria-hidden="true"><use href="#i-spark"></use></svg></div>
+            <h3>Self-learning skills</h3>
+            <p>Complex tasks get reflected into reusable SKILL.md procedures that load on demand.</p>
+            <code>skills/</code>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-line" id="under-the-hood" aria-labelledby="under-title">
+      <div class="container">
+        <div class="section-head">
+          <div data-reveal>
+            <div class="eyebrow">Under the hood</div>
+            <h2 class="section-title" id="under-title">The spec sheet, <span class="dim">without the fog.</span></h2>
+          </div>
+        </div>
+
+        <div class="spec-grid" data-reveal>
+          <div class="spec-row"><div class="spec-key">Voice engine</div><div class="spec-val">Gemini Live with Extended Thinking and Affective Dialog. <b>35 HD voices</b>, emotional prosody, barge-in, and echo discrimination.</div></div>
+          <div class="spec-row"><div class="spec-key">Model ladder</div><div class="spec-val">Four Live fallbacks plus a <b>five-provider REST router</b> (Groq, OpenRouter, Mistral, NVIDIA, HuggingFace) with quotas and cooldowns.</div></div>
+          <div class="spec-row"><div class="spec-key">Memory</div><div class="spec-val"><b>SQLite FTS5</b> store, <code>MEMORY.md</code>, <code>USER.md</code>, searchable <code>conversation.jsonl</code>, and a learning loop for <code>SKILL.md</code>.</div></div>
+          <div class="spec-row"><div class="spec-key">Desktop control</div><div class="spec-val">DPI-aware SendInput mouse/keyboard, a low-level Esc hook, <b>background UI automation</b> via pywinauto, and an animated AI cursor.</div></div>
+          <div class="spec-row"><div class="spec-key">Safety</div><div class="spec-val">Deterministic <b>deny / confirm / allow</b> rules, UI-issued confirmation, automatic checkpoints, and a 50-item rollback history.</div></div>
+          <div class="spec-row"><div class="spec-key">Extensibility</div><div class="spec-val"><b>MCP stdio servers</b>, a plugin loader with crash isolation, and skills created automatically from solved tasks.</div></div>
+          <div class="spec-row"><div class="spec-key">Platform</div><div class="spec-val">Windows 10/11 (64-bit) installer and portable builds. Microphone, speakers, and an internet connection. <b>No GPU required.</b></div></div>
+          <div class="spec-row"><div class="spec-key">License</div><div class="spec-val"><b>CC BY-NC 4.0</b> — free for personal and non-commercial use. You provide your own provider API keys.</div></div>
+        </div>
+
+        <div style="margin-top:54px" data-reveal>
+          <h3 style="font-size:20px;margin-bottom:16px">A chat window runs an errand. This runs the desktop.</h3>
+          <div class="compare-wrap">
+            <table class="compare-table">
+              <thead>
+                <tr><th>Dimension</th><th>Typical chatbot</th><th>Omkar-Ai</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Where it lives</td><td>A browser tab</td><td><span class="yes">On your desktop</span></td></tr>
+                <tr><td>What it can touch</td><td>Text you paste</td><td><span class="yes">Files, apps, windows, browser</span></td></tr>
+                <tr><td>Memory</td><td>Falls away with the session</td><td><span class="yes">Persistent, searchable, local</span></td></tr>
+                <tr><td>Long jobs</td><td>One response at a time</td><td><span class="yes">Isolated subagents in parallel</span></td></tr>
+                <tr><td>Mistakes</td><td>Regenerate the answer</td><td><span class="yes">Checkpoint and undo the change</span></td></tr>
+                <tr><td>Destructive actions</td><td>Not applicable</td><td><span class="yes">Deterministic guard + human approval</span></td></tr>
+                <tr><td>Extensibility</td><td>Wait for the vendor</td><td><span class="yes">MCP servers, plugins, learned skills</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-tight" aria-label="Download Omkar-Ai">
+      <div class="container">
+        <div class="page-cta" data-reveal>
+          <div class="eyebrow" style="justify-content:center">Ready when you are</div>
+          <h2>Give your desktop a mind of its own.</h2>
+          <p>Version 3.0.0 for Windows 10/11. Installer or portable ZIP — your machine, your key, your data.</p>
+          <div class="btn-row">
+            <a class="btn btn-primary btn-lg" href="downloads/Omkar-Ai-Setup-3.0.0.exe" download>
+              <svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg>
+              Download for Windows
+            </a>
+            <a class="btn btn-secondary btn-lg" href="docs.html">Read the docs <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          </div>
+          <p style="margin-top:16px"><code>v3.0.0 · 97 MB · SHA-256 VERIFIED</code></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" aria-label="Omkar-Ai home">
+            <img src="assets/img/logo.svg" alt="" width="34" height="34">
+            <span class="brand-text">OMKAR<span>-AI</span></span>
+          </a>
+          <p>A voice-first, OS-level AI assistant with persistent memory, real desktop control, and a safety net that treats permission as a feature.</p>
+          <span class="footer-version"><i></i> v3.0.0 · WINDOWS</span>
+        </div>
+        <div class="footer-col">
+          <h3>Product</h3>
+          <a href="features.html">Features</a>
+          <a href="download.html">Download</a>
+          <a href="changelog.html">Changelog</a>
+          <a href="docs.html">Documentation</a>
+        </div>
+        <div class="footer-col">
+          <h3>Company</h3>
+          <a href="about.html">About</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+        </div>
+        <div class="footer-cta">
+          <p>Bring the mind to your machine. Free for personal use.</p>
+          <a class="btn btn-primary" href="downloads/Omkar-Ai-Setup-3.0.0.exe" download>
+            <svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg>
+            Download v3.0.0
+          </a>
+          <small>97 MB · WINDOWS 10/11 · NO GPU</small>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> Omkar Chauhan. All rights reserved.</span>
+        <span>DESIGNED &amp; BUILT BY OMKAR CHAUHAN · CC BY-NC 4.0</span>
+        <a class="back-top" href="#main">BACK TO TOP ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="assets/js/three-scene.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

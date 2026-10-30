@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Documentation — Omkar-Ai</title>
+  <meta name="description" content="Omkar-Ai v3.0.0 documentation. Quick start, first-run setup, voice commands, HUD guide, memory, subagents, safety & undo, MCP, shortcuts, and troubleshooting.">
+  <meta name="theme-color" content="#04070d">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Documentation — Omkar-Ai v3.0.0">
+  <meta property="og:description" content="Complete docs for Omkar-Ai: setup, commands, HUD, memory, subagents, safety, MCP, shortcuts.">
+  <meta property="og:image" content="assets/img/og-cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Documentation — Omkar-Ai v3.0.0">
+  <meta name="twitter:description" content="Complete docs for Omkar-Ai v3.0.0.">
+  <meta name="twitter:image" content="assets/img/og-cover.png">
+  <script>document.documentElement.classList.remove("no-js");</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon-sprite" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m0 0 5-5m-5 5-5-5M5 21h14"/></symbol>
+    <symbol id="i-windows" viewBox="0 0 24 24"><path d="M3.5 5.5 10.5 4.5v7h-7zM13.5 4.2 20.5 3v8.5h-7zM3.5 13.5h7v7l-7-1zM13.5 13.5h7V21l-7-1z"/></symbol>
+    <symbol id="i-archive" viewBox="0 0 24 24"><path d="M4 7h16v13H4zM3 4h18v3H3zM9 11h6"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 20 6v5c0 5-3.4 8.4-8 10-4.6-1.6-8-5-8-10V6z"/><path d="m8.5 12 2.3 2.3L16 9.5"/></symbol>
+    <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3M10 10h4v4h-4z"/></symbol>
+    <symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="5.5" rx="8" ry="3"/><path d="M4 5.5v13c0 1.7 3.6 3 8 3s8-1.3 8-3v-13M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></symbol>
+    <symbol id="i-cursor" viewBox="0 0 24 24"><path d="m4 3 15 8.5-6.3 1.7L9 20z"/><path d="M13 14.5 19 21M18 4l1-2M21 8l2-1M4 15l-2 1"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></symbol>
+    <symbol id="i-plug" viewBox="0 0 24 24"><path d="M9 2v6M15 2v6M6 8h12v3a6 6 0 0 1-12 0zM12 17v5"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10v2a7 7 0 0 0 14 0v-2M12 19v3"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></symbol>
+    <symbol id="i-terminal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3M13 15h4"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></symbol>
+    <symbol id="i-warn" viewBox="0 0 24 24"><path d="M12 3 22 20H2z"/><path d="M12 9v5M12 17h.01"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
+    <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><path d="M3 7h4l2-3h6l2 3h4v13H3z"/><circle cx="12" cy="13" r="4"/></symbol>
+    <symbol id="i-message" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-8 8H4l2-4a8 8 0 1 1 15-4z"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.5 3.8 9S14.5 18.5 12 21c-2.5-2.5-3.8-5.5-3.8-9S9.5 5.5 12 3z"/></symbol>
+    <symbol id="i-wave" viewBox="0 0 24 24"><path d="M2 12h2l2-6 3 12 3-15 3 18 2-9h3"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="m11 12 8-8M16 7l2 2M14 9l2 2"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7z"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M2 8.5a15 15 0 0 1 20 0M5.5 12a10 10 0 0 1 13 0M9 15.5a5 5 0 0 1 6 0M12 19h.01"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 6a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-mouse" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="6"/><path d="M12 6v4"/></symbol>
+    <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 9 5-9 5-9-5zM3 12l9 5 9-5M3 17l9 5 9-5"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></symbol>
+  </svg>
+
+  <header class="site-header" data-header>
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="Omkar-Ai home">
+        <img src="assets/img/logo.svg" alt="" width="34" height="34">
+        <span class="brand-text">OMKAR<span>-AI</span></span>
+      </a>
+      <nav class="nav" id="site-nav" aria-label="Primary">
+        <a href="features.html">Features</a>
+        <a href="download.html">Download</a>
+        <a href="docs.html">Docs</a>
+        <a href="changelog.html">Changelog</a>
+        <a href="about.html">About</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-ghost nav-download" href="download.html">Download <span>v3.0.0</span></a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-hero-side">
+          <div>
+            <div class="eyebrow">v3.0.0 reference</div>
+            <h1>Documentation</h1>
+            <p class="lead">
+              Everything you need to set up, configure, and drive Omkar-Ai. Start with <a href="#quick-start">Quick Start</a>
+              or jump to a specific topic from the sidebar.
+            </p>
+            <div class="page-hero-meta">
+              <span class="tag tag-cyan">Windows 10/11</span>
+              <span class="tag">Installer · Portable</span>
+              <span class="tag tag-green">Local-first</span>
+            </div>
+          </div>
+          <div class="page-hero-aside" aria-label="Doc status">
+            <div><span>VERSION</span><b>3.0.0</b></div>
+            <div><span>UPDATED</span><b>Oct 2026</b></div>
+            <div><span>TESTS</span><b>283 passing</b></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tight">
+      <div class="container">
+        <div class="docs-layout">
+          <nav class="docs-nav" aria-label="Documentation navigation">
+            <p class="docs-nav-title">Contents</p>
+            <a href="#quick-start">Quick Start</a>
+            <a href="#first-run">First-Run Key Setup</a>
+            <a href="#voice-commands">Voice Commands</a>
+            <a href="#hud-guide">HUD Guide</a>
+            <a href="#memory">Memory & Skills</a>
+            <a href="#subagents">Subagent Delegation</a>
+            <a href="#safety-undo">Safety & Undo</a>
+            <a href="#mcp">MCP Integration</a>
+            <a href="#shortcuts">Keyboard Shortcuts</a>
+            <a href="#troubleshooting">Troubleshooting</a>
+
+            <div class="docs-nav-sub">
+              <p class="docs-nav-title">Reference</p>
+              <a href="#config-files">Config Files</a>
+              <a href="#data-locations">Data Locations</a>
+              <a href="#updates">Updates</a>
+            </div>
+          </nav>
+
+          <div class="docs-content">
+            <article class="doc-section" id="quick-start">
+              <h2>Quick Start</h2>
+              <p>Get from download to first conversation in under two minutes.</p>
+
+              <h3>1. Download & verify</h3>
+              <p>Grab the <a href="download.html">Windows installer (97 MB)</a> or <a href="download.html">portable ZIP (130 MB)</a>. Verify the SHA-256 checksum before running.</p>
+
+              <h3>2. Install or extract</h3>
+              <ul>
+                <li><strong>Installer:</strong> Run <code>Omkar-Ai-Setup-3.0.0.exe</code>. If SmartScreen appears, choose <b>More info → Run anyway</b>. Launch from Start menu.</li>
+                <li><strong>Portable:</strong> Extract the <code>Omkar-Ai</code> folder (keep all files together). Run <code>Omkar-Ai.exe</code>.</li>
+              </ul>
+
+              <h3>3. Enter your Gemini API key</h3>
+              <p>On first launch, a setup overlay appears. Paste a <a href="https://ai.google.dev/gemini-api/docs/api-key" target="_blank" rel="noopener">free Gemini API key</a> and click <b>Save</b>. No key is bundled with the download.</p>
+
+              <h3>4. Talk</h3>
+              <p>Hold <kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">Space</kbd> (or click the mic button) and speak. Try: <em>"What can you do?"</em> or <em>"Open Notepad and type hello."</em></p>
+
+              <div class="doc-callout">
+                <svg class="icon" aria-hidden="true"><use href="#i-info"></use></svg>
+                <div>
+                  <strong>Optional providers:</strong> Add Groq, OpenRouter, Mistral, NVIDIA, or HuggingFace keys in <b>⚙ SETTINGS → 🔑 API PROVIDERS</b> for automatic fallback when Gemini hits quota.
+                </div>
+              </div>
+            </article>
+
+            <article class="doc-section" id="first-run">
+              <h2>First-Run Key Setup</h2>
+              <p>The first-run overlay asks for a single required key: <code>gemini_api_key</code>. Additional providers are optional and can be added later.</p>
+
+              <h3>config/api_keys.json</h3>
+              <p>All keys are stored locally in this file. You can edit it directly or use the Settings drawer.</p>
+              <div class="code-block">
+                <div class="code-head"><span>JSON</span><button class="copy-btn" data-copy="#apikeys-example" aria-label="Copy example" title="Copy"><svg class="icon"><use href="#i-copy"></use></svg></button></div>
+                <pre id="apikeys-example"><code>{
+  "gemini_api_key": "YOUR_GEMINI_KEY",
+  "groq_api_key": "YOUR_GROQ_KEY",
+  "openrouter_api_key": "YOUR_OPENROUTER_KEY",
+  "mistral_api_key": "YOUR_MISTRAL_KEY",
+  "nvidia_api_key": "YOUR_NVIDIA_KEY",
+  "huggingface_api_key": "YOUR_HF_TOKEN"
+}</code></pre>
+              </div>
+
+              <h3>Model Ladder (Voice)</h3>
+              <p>The live voice engine tries models in this order, falling back automatically:</p>
+              <ol>
+                <li><code>gemini-3.8-live-extended-thinking</code> — unlimited reasoning tokens</li>
+                <li><code>gemini-3.8-live</code></li>
+                <li><code>gemini-3.1-flash-live-preview</code></li>
+                <li><code>gemini-2.5-flash-native-audio</code></li>
+              </ol>
+              <p>Background one-shot tasks use the Multi-Provider Router (Groq, OpenRouter, Mistral, NVIDIA, HF) with cooldowns and quotas.</p>
+            </article>
+
+            <article class="doc-section" id="voice-commands">
+              <h2>Voice Commands — Common Patterns</h2>
+              <p>Omkar-Ai understands natural language. These are representative examples — you don't need exact phrasing.</p>
+
+              <table class="command-table">
+                <thead>
+                  <tr><th>Intent</th><th>Example Command</th><th>What Happens</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Safety Guard</td><td>"Delete my Downloads folder"</td><td>Confirm Banner appears — press "YES, DO IT" or say "yes"</td></tr>
+                  <tr><td>Time Machine</td><td>"Undo" / "Put it back"</td><td>Restores last checkpoint from <code>.omkar_backups/</code></td></tr>
+                  <tr><td>Subagent</td><td>"Use a subagent to scrape example.com for prices"</td><td>Spawns isolated worker, returns summary</td></tr>
+                  <tr><td>UI Automation</td><td>"Click the Save button in Notepad"</td><td><code>pywinauto</code> clicks without moving your mouse</td></tr>
+                  <tr><td>UI Automation</td><td>"Type 'hello world' in the Calculator"</td><td>Sends keystrokes directly to Calculator window</td></tr>
+                  <tr><td>MCP</td><td>"Create a GitHub issue titled 'Bug'"</td><td>Calls <code>github_create_issue</code> via MCP</td></tr>
+                  <tr><td>MCP</td><td>"Query my SQLite database for users"</td><td>Calls <code>sqlite_query</code> via MCP</td></tr>
+                  <tr><td>Proactive</td><td>"Enable proactive mode"</td><td>Starts 15-min background checks</td></tr>
+                  <tr><td>Voice</td><td>"Change voice to Lyra"</td><td>Reconnects with new HD voice</td></tr>
+                  <tr><td>Undo History</td><td>"Open undo history"</td><td>Opens <code>UndoOverlay</code> with checkpoint list</td></tr>
+                  <tr><td>Memory</td><td>"Remember I prefer dark mode"</td><td>Saves to Hermes Memory (SQLite FTS5)</td></tr>
+                  <tr><td>Memory</td><td>"What did we decide yesterday?"</td><td>Searches conversation history + long-term memory</td></tr>
+                  <tr><td>File Ops</td><td>"Summarize the PDF on my Desktop"</td><td>Reads file, returns summary</td></tr>
+                  <tr><td>Screen Vision</td><td>"What's on my screen?"</td><td>Captures screen, sends to Gemini Live vision</td></tr>
+                </tbody>
+              </table>
+
+              <h3>Push-to-Talk</h3>
+              <p>Default chord: <kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">Space</kbd> (hold to talk, release to send). Change it in <b>⚙ SETTINGS → CONTROLS</b>. Global hotkey works when the window isn't focused (Windows only).</p>
+            </article>
+
+            <article class="doc-section" id="hud-guide">
+              <h2>HUD Guide</h2>
+              <p>The HUD is the always-on-top overlay showing system state, live audio, and activity.</p>
+
+              <h3>Centrepieces (cycle with <b>HUD STYLE</b> in Settings)</h3>
+              <ul>
+                <li><strong>Animated Face</strong> — Holographic head with viseme lip-sync (default)</li>
+                <li><strong>3D Avatar</strong> — Your photo as a depth-relief mesh (<code>assets/avatar.jpg</code>)</li>
+                <li><strong>Reactor Core</strong> — Minimalist animated orb</li>
+              </ul>
+
+              <h3>Panels</h3>
+              <ul>
+                <li><strong>Left Rail:</strong> CPU, RAM, Network, GPU meters + AI Core status</li>
+                <li><strong>Centre Stage:</strong> Voice state (LISTENING/THINKING/SPEAKING), orb, waveform, last reply</li>
+                <li><strong>Right Log:</strong> Live activity feed — color-coded (purple=subagent, yellow=safety, blue=checkpoint)</li>
+                <li><strong>Bottom Prompt:</strong> Type commands or see the typing indicator</li>
+              </ul>
+
+              <h3>Status Badges</h3>
+              <p>Real-time pills in the HUD header:</p>
+              <ul>
+                <li>🧠 <strong>THINKING</strong> — Extended Thinking active</li>
+                <li>🤖 <strong>SUBAGENT</strong> — Background worker running</li>
+                <li>🔍 <strong>PROACTIVE</strong> — 15-min loop active</li>
+                <li>🛡️ <strong>SAFE</strong> — Safety Guard engaged</li>
+              </ul>
+            </article>
+
+            <article class="doc-section" id="memory">
+              <h2>Memory & Skills</h2>
+
+              <h3>Hermes Memory (SQLite FTS5)</h3>
+              <p>Persistent, searchable, prompt-budgeted. The index of all keys travels in the prompt; full values are fetched on demand via <code>recall_memory</code>.</p>
+
+              <h3>Conversation History</h3>
+              <p>Every turn logged to <code>memory/conversation.jsonl</code> — searchable, session-filtered, summarised for morning briefings.</p>
+
+              <h3>Self-Learning Loop</h3>
+              <p>After complex tasks (≥5 tools, error, or new skill), a background reflection creates/updates <code>SKILL.md</code> files in <code>skills/</code> — reusable procedures captured automatically.</p>
+
+              <h3>Skills System</h3>
+              <p>Tool: <code>skill_manage</code> — list, view, create, patch, delete <code>SKILL.md</code> files. Progressive disclosure: metadata in prompt, full body on demand.</p>
+            </article>
+
+            <article class="doc-section" id="subagents">
+              <h2>Subagent Delegation</h2>
+              <p><code>delegate_task(task, tools_allowed?)</code> spawns an isolated background worker with its own context, tool allow-list, safety guard, and planner.</p>
+
+              <h3>How it works</h3>
+              <ul>
+                <li><strong>Planning:</strong> Explicit <code>tool(key=value)</code> calls in task text, or keyword routing (web_search, file_controller)</li>
+                <li><strong>Safety:</strong> Phase 5 Guard enforced inside subagent — <code>deny</code> stops, <code>confirm</code> returns "needs user's yes" to parent</li>
+                <li><strong>Tools:</strong> Parent keeps conversation; subagent returns summary</li>
+              </ul>
+
+              <h3>Example</h3>
+              <div class="code-block">
+                <div class="code-head"><span>Voice</span></div>
+                <pre><code>"Use a subagent to research the top 5 Rust web frameworks and save a comparison to my Desktop."</code></pre>
+              </div>
+              <p>The subagent searches, reads, writes a file, and reports back — all while you keep talking to the main agent.</p>
+            </article>
+
+            <article class="doc-section" id="safety-undo">
+              <h2>Safety & Undo (Time Machine)</h2>
+
+              <h3>Deterministic Safety Guard</h3>
+              <p>Regex/exact-match rules — three outcomes:</p>
+              <ul>
+                <li><strong>deny</strong> — blocks the action, logs reason</li>
+                <li><strong>confirm</strong> — requires human button/voice; model <strong>cannot</strong> confirm its own requests</li>
+                <li><strong>allow</strong> — proceeds silently</li>
+              </ul>
+              <p>Rules cover file deletion, system commands, registry edits, network calls, and more.</p>
+
+              <h3>Confirm Banner</h3>
+              <p>Visual overlay with <b>YES, DO IT</b> / <b>CANCEL</b>. Token issued by UI, not model. Voice "yes" / "no" also works.</p>
+
+              <h3>Checkpoints & Undo</h3>
+              <ul>
+                <li>Auto-backup before destructive file ops (delete, move, overwrite, bulk) to <code>.omkar_backups/<timestamp>/</code> with JSON metadata</li>
+                <li><code>undo</code> tool → <code>checkpoint_rollback()</code> restores last checkpoint</li>
+                <li><code>undo list</code> shows history (50-checkpoint limit, thread-safe)</li>
+              </ul>
+
+              <h3>ESC Interrupt</h3>
+              <p>Low-level keyboard hook distinguishes <strong>human ESC</strong> (stops agent immediately) from <strong>agent ESC</strong> (ignored — stamped with <code>INJECTED_MARKER</code>).</p>
+            </article>
+
+            <article class="doc-section" id="mcp">
+              <h2>MCP Integration (Model Context Protocol)</h2>
+              <p>Connect external tool servers dynamically. Tools appear as prefixed functions (e.g., <code>github_create_issue</code>).</p>
+
+              <h3>Config: config/mcp_servers.json</h3>
+              <div class="code-block">
+                <div class="code-head"><span>JSON</span><button class="copy-btn" data-copy="#mcp-example" aria-label="Copy example" title="Copy"><svg class="icon"><use href="#i-copy"></use></svg></button></div>
+                <pre id="mcp-example"><code>{
+  "servers": {
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": { "GITHUB_PERSONAL_ACCESS_TOKEN": "your_token" },
+      "description": "GitHub repository operations"
+    },
+    "sqlite": {
+      "command": "uvx",
+      "args": ["mcp-server-sqlite", "--db-path", "C:\\path\\to\\db.sqlite"],
+      "description": "SQLite database operations"
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "C:\\allowed\\path"],
+      "description": "File system operations"
+    }
+  }
+}</code></pre>
+              </div>
+
+              <h3>UI Tools</h3>
+              <ul>
+                <li><code>mcp_list_servers</code> — status indicators</li>
+                <li><code>mcp_list_tools</code> — browse available tools</li>
+                <li><code>mcp_call_tool</code> — invoke directly</li>
+              </ul>
+              <p>Open <b>🔌 MCP SERVERS</b> in the drawer to test connections. Say <em>"reconnect"</em> after editing the config.</p>
+
+              <div class="doc-callout is-amber">
+                <svg class="icon" aria-hidden="true"><use href="#i-warn"></use></svg>
+                <div>MCP servers run as child processes. Only configure servers you trust. The sandbox is the server's own permissions.</div>
+              </div>
+            </article>
+
+            <article class="doc-section" id="shortcuts">
+              <h2>Keyboard Shortcuts</h2>
+              <table class="command-table">
+                <thead><tr><th>Key</th><th>Action</th></tr></thead>
+                <tbody>
+                  <tr><td><kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">Space</kbd></td><td>Push-to-talk (hold)</td></tr>
+                  <tr><td><kbd class="kbd">F4</kbd></td><td>Toggle mute</td></tr>
+                  <tr><td><kbd class="kbd">F11</kbd></td><td>Toggle fullscreen HUD</td></tr>
+                  <tr><td><kbd class="kbd">Esc</kbd></td><td>Interrupt agent (human only)</td></tr>
+                </tbody>
+              </table>
+              <p>Customize the push-to-talk chord in <b>⚙ SETTINGS → CONTROLS → PTT Chord</b>.</p>
+            </article>
+
+            <article class="doc-section" id="troubleshooting">
+              <h2>Troubleshooting</h2>
+
+              <h3>No sound / no microphone</h3>
+              <ul>
+                <li>Run <code>python setup.py</code> again (source) or check audio pickers in <b>⚙ SETTINGS → AUDIO</b></li>
+                <li>Windows Privacy → Microphone → allow desktop apps</li>
+                <li>Ensure speakers aren't muted in Windows Volume Mixer</li>
+              </ul>
+
+              <h3>SmartScreen blocks installer</h3>
+              <ul>
+                <li>Verify SHA-256 first (see <a href="download.html">Download page</a>)</li>
+                <li>Choose <b>More info → Run anyway</b></li>
+              </ul>
+
+              <h3>Update check fails</h3>
+              <ul>
+                <li>Check internet / VPN / proxy</li>
+                <li>Verify <code>repo</code> in <code>config/update_config.json</code> = <code>omkarchauhan/Omkar-Ai</code></li>
+                <li>GitHub rate-limits unauthenticated checks — wait and retry with ⟳ button</li>
+              </ul>
+
+              <h3>App won't start after update</h3>
+              <p>Re-run the installer from the release page. <code>config/</code>, <code>memory/</code>, <code>skills/</code> are preserved.</p>
+
+              <h3>High CPU / memory</h3>
+              <ul>
+                <li>Disable proactive tasks: <b>⚙ SETTINGS → TOGGLES → Proactive Tasks</b></li>
+                <li>Reduce HUD complexity: switch to Reactor Core centrepiece</li>
+                <li>Close unused MCP servers</li>
+              </ul>
+            </article>
+
+            <article class="doc-section" id="config-files">
+              <h2>Config Files Reference</h2>
+              <table class="command-table">
+                <thead><tr><th>File</th><th>Purpose</th></tr></thead>
+                <tbody>
+                  <tr><td><code>config/api_keys.json</code></td><td>All provider keys, voice, color, toggles</td></tr>
+                  <tr><td><code>config/mcp_servers.json</code></td><td>MCP server definitions</td></tr>
+                  <tr><td><code>config/update_config.json</code></td><td>Updater behavior (auto_check, repo, require_checksum)</td></tr>
+                  <tr><td><code>memory/long_term.json</code></td><td>Hermes Memory persistent store</td></tr>
+                  <tr><td><code>memory/conversation.jsonl</code></td><td>Conversation history (JSON Lines)</td></tr>
+                  <tr><td><code>skills/*.md</code></td><td>Learned skills (auto-created)</td></tr>
+                </tbody>
+              </table>
+            </article>
+
+            <article class="doc-section" id="data-locations">
+              <h2>Data Locations</h2>
+              <table class="command-table">
+                <thead><tr><th>Build Type</th><th>Base Folder</th></tr></thead>
+                <tbody>
+                  <tr><td>Installer</td><td><code>%LOCALAPPDATA%\Programs\Omkar-Ai\</code></td></tr>
+                  <tr><td>Portable</td><td>Extracted <code>Omkar-Ai\</code> folder</td></tr>
+                </tbody>
+              </table>
+              <p>All subfolders (<code>config/</code>, <code>memory/</code>, <code>skills/</code>, <code>.omkar_backups/</code>) live beside the executable.</p>
+            </article>
+
+            <article class="doc-section" id="updates">
+              <h2>Updates</h2>
+              <p>Installed builds check GitHub Releases every 6 hours. Flow:</p>
+              <ol>
+                <li>Update banner appears over main window</li>
+                <li>Review release notes → <b>INSTALL UPDATE</b></li>
+                <li>Omkar-Ai downloads installer, verifies SHA-256 against <code>SHA256SUMS.txt</code>, runs silently, restarts</li>
+              </ol>
+              <p>Choose <b>LATER</b> to postpone. The ⟳ button in the header runs a manual check anytime.</p>
+              <p>Disable auto-checks without losing manual checks:</p>
+              <div class="code-block">
+                <div class="code-head"><span>JSON</span></div>
+                <pre><code>{
+  "repo": "omkarchauhan/Omkar-Ai",
+  "auto_check": false
+}</code></pre>
+              </div>
+              <p><code>require_checksum</code> defaults to <code>true</code>. Do not set to <code>false</code> unless testing a private release that genuinely cannot publish checksums.</p>
+            </article>
+
+            <div class="docs-next">
+              <a class="btn btn-secondary" href="download.html"><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg> Download v3.0.0</a>
+              <a class="btn btn-ghost" href="features.html">Back to Features <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" aria-label="Omkar-Ai home">
+            <img src="assets/img/logo.svg" alt="" width="34" height="34">
+            <span class="brand-text">OMKAR<span>-AI</span></span>
+          </a>
+          <p>A voice-first, OS-level AI assistant with persistent memory, real desktop control, and a safety net that treats permission as a feature.</p>
+          <span class="footer-version"><i></i> v3.0.0 · WINDOWS</span>
+        </div>
+        <div class="footer-col">
+          <h3>Product</h3>
+          <a href="features.html">Features</a>
+          <a href="download.html">Download</a>
+          <a href="changelog.html">Changelog</a>
+          <a href="docs.html">Documentation</a>
+        </div>
+        <div class="footer-col">
+          <h3>Company</h3>
+          <a href="about.html">About</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+        </div>
+        <div class="footer-cta">
+          <p>Bring the mind to your machine. Free for personal use.</p>
+          <a class="btn btn-primary" href="downloads/Omkar-Ai-Setup-3.0.0.exe" download>
+            <svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg>
+            Download v3.0.0
+          </a>
+          <small>97 MB · WINDOWS 10/11 · NO GPU</small>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> Omkar Chauhan. All rights reserved.</span>
+        <span>DESIGNED & BUILT BY OMKAR CHAUHAN · CC BY-NC 4.0</span>
+        <a class="back-top" href="#main">BACK TO TOP ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="assets/js/three-scene.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

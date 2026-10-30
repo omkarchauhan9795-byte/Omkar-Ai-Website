@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Changelog — Omkar-Ai</title>
+  <meta name="description" content="Omkar-Ai v3.0.0 release notes and full version history. Hermes Mind, Stonic Body, subagents, safety guardrails, MCP, and more.">
+  <meta name="theme-color" content="#04070d">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Changelog — Omkar-Ai v3.0.0">
+  <meta property="og:description" content="Full release history for Omkar-Ai. v3.0.0 brings Hermes Mind, Stonic Body, subagents, and MCP.">
+  <meta property="og:image" content="assets/img/og-cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Changelog — Omkar-Ai v3.0.0">
+  <meta name="twitter:description" content="Full release history for Omkar-Ai.">
+  <meta name="twitter:image" content="assets/img/og-cover.png">
+  <script>document.documentElement.classList.remove("no-js");</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon-sprite" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m0 0 5-5m-5 5-5-5M5 21h14"/></symbol>
+    <symbol id="i-windows" viewBox="0 0 24 24"><path d="M3.5 5.5 10.5 4.5v7h-7zM13.5 4.2 20.5 3v8.5h-7zM3.5 13.5h7v7l-7-1zM13.5 13.5h7V21l-7-1z"/></symbol>
+    <symbol id="i-archive" viewBox="0 0 24 24"><path d="M4 7h16v13H4zM3 4h18v3H3zM9 11h6"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 20 6v5c0 5-3.4 8.4-8 10-4.6-1.6-8-5-8-10V6z"/><path d="m8.5 12 2.3 2.3L16 9.5"/></symbol>
+    <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3M10 10h4v4h-4z"/></symbol>
+    <symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="5.5" rx="8" ry="3"/><path d="M4 5.5v13c0 1.7 3.6 3 8 3s8-1.3 8-3v-13M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></symbol>
+    <symbol id="i-cursor" viewBox="0 0 24 24"><path d="m4 3 15 8.5-6.3 1.7L9 20z"/><path d="M13 14.5 19 21M18 4l1-2M21 8l2-1M4 15l-2 1"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></symbol>
+    <symbol id="i-plug" viewBox="0 0 24 24"><path d="M9 2v6M15 2v6M6 8h12v3a6 6 0 0 1-12 0zM12 17v5"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10v2a7 7 0 0 0 14 0v-2M12 19v3"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></symbol>
+    <symbol id="i-terminal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3M13 15h4"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></symbol>
+    <symbol id="i-warn" viewBox="0 0 24 24"><path d="M12 3 22 20H2z"/><path d="M12 9v5M12 17h.01"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
+    <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><path d="M3 7h4l2-3h6l2 3h4v13H3z"/><circle cx="12" cy="13" r="4"/></symbol>
+    <symbol id="i-message" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-8 8H4l2-4a8 8 0 1 1 15-4z"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.5 3.8 9S14.5 18.5 12 21c-2.5-2.5-3.8-5.5-3.8-9S9.5 5.5 12 3z"/></symbol>
+    <symbol id="i-wave" viewBox="0 0 24 24"><path d="M2 12h2l2-6 3 12 3-15 3 18 2-9h3"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="m11 12 8-8M16 7l2 2M14 9l2 2"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7z"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M2 8.5a15 15 0 0 1 20 0M5.5 12a10 10 0 0 1 13 0M9 15.5a5 5 0 0 1 6 0M12 19h.01"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 6a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-mouse" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="6"/><path d="M12 6v4"/></symbol>
+    <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 9 5-9 5-9-5zM3 12l9 5 9-5M3 17l9 5 9-5"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></symbol>
+  </svg>
+
+  <header class="site-header" data-header>
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="Omkar-Ai home">
+        <img src="assets/img/logo.svg" alt="" width="34" height="34">
+        <span class="brand-text">OMKAR<span>-AI</span></span>
+      </a>
+      <nav class="nav" id="site-nav" aria-label="Primary">
+        <a href="features.html">Features</a>
+        <a href="download.html">Download</a>
+        <a href="docs.html">Docs</a>
+        <a href="changelog.html">Changelog</a>
+        <a href="about.html">About</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-ghost nav-download" href="download.html">Download <span>v3.0.0</span></a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-hero-side">
+          <div>
+            <div class="eyebrow">Release history</div>
+            <h1>Changelog</h1>
+            <p class="lead">
+              Every notable change to Omkar-Ai. The current stable release is <strong>v3.0.0</strong> — Hermes Mind + Stonic Body.
+            </p>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="download.html">
+                <svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg>
+                Download v3.0.0
+              </a>
+            </div>
+            <div class="page-hero-meta">
+              <span class="tag tag-cyan">Current: 3.0.0</span>
+              <span class="tag">October 2026</span>
+              <span class="tag tag-green">283 tests passing</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tight">
+      <div class="container">
+        <div class="timeline">
+
+          <article class="release is-current" id="v3-0-0">
+            <header class="release-head">
+              <div class="release-version">
+                <h2>v3.0.0</h2>
+              </div>
+              <time class="release-date" datetime="2026-10-29">2026-10-29</time>
+            </header>
+            <div class="release-body">
+              <p>Omkar-Ai becomes an OS-level AGI: a "Hermes Mind" (persistent memory + self-learning skills) and a "Stonic Body" (Win32 hands + safety guard + subagents). Powered by Gemini 3.8 Live with Extended Thinking and Affective Dialog.</p>
+
+              <div class="release-group">
+                <h3>Added</h3>
+                <ul>
+                  <li><b>Extended Thinking:</b> <code>gemini-3.8-live-extended-thinking</code> with <code>thinking_budget=-1</code> (unlimited reasoning tokens).</li>
+                  <li><b>Affective Dialog:</b> Emotional voice expression — tone, pacing, prosody match content.</li>
+                  <li><b>35 HD Voices:</b> 30 new Gemini 3.8 voices (Zephyr, Lyra, Orion, Vega, Atlas, Nova, Cosmos, Solara, Luna, Titan, Aurora, Phoenix, Nebula, Quasar, Polaris, Vela, Rigel, Sirius, Arcturus, Capella, Procyon, Aldebaran, Betelgeuse, Antares, Spica) + 5 legacy.</li>
+                  <li><b>Subagent Delegation:</b> <code>delegate_task</code> tool spawns isolated background workers with own context, tools, safety guard, and planner.</li>
+                  <li><b>Proactive Background Tasks:</b> 15-min loop checks old Desktop files (>24h), pending emails, upcoming calendar events. Toggle via <code>enable_proactive_tasks</code>.</li>
+                  <li><b>Real ESC Interrupt:</b> Low-level hook — human ESC stops agent; agent ESC ignored (stamped with <code>INJECTED_MARKER</code>).</li>
+                  <li><b>Blue AI Cursor (Neela):</b> Animated cursor with breathing glow; swaps system cursors, restores on exit.</li>
+                  <li><b>Background UI Automation:</b> <code>pywinauto</code> click/type/read without physical mouse movement; falls back to <code>win32_hands</code>.</li>
+                  <li><b>Checkpoints & Undo:</b> Auto-backup before destructive ops to <code>.omkar_backups/<timestamp>/</code>; <code>undo</code> restores; <code>undo list</code> shows history (50-checkpoint limit, thread-safe).</li>
+                  <li><b>MCP Integration:</b> Dynamic tool loading from external stdio servers (GitHub, SQLite, Filesystem, Memory, Brave Search, Postgres, Slack, Google Drive) via <code>config/mcp_servers.json</code>.</li>
+                  <li><b>Multi-Provider API Router:</b> Groq, OpenRouter, Mistral, NVIDIA, HuggingFace — automatic fallback when Gemini quota exhausted.</li>
+                  <li><b>HUD Status Badges:</b> Real-time pills: 🧠 THINKING, 🤖 SUBAGENT, 🔍 PROACTIVE, 🛡️ SAFE.</li>
+                  <li><b>Log Color Coding:</b> Subagent (purple), Safety (yellow), Checkpoint (blue).</li>
+                </ul>
+              </div>
+
+              <div class="release-group">
+                <h3>Changed</h3>
+                <ul>
+                  <li>Rebranded to <strong>Omkar-Ai</strong> with version foundation.</li>
+                  <li>Live conversation model from single constant; no duplicate copies.</li>
+                  <li>README and roadmap rewritten without edition labels or third-party credits.</li>
+                  <li>Default HUD centrepiece is Animated Face; 3D Avatar (your photo as depth mesh) and Reactor Core available.</li>
+                </ul>
+              </div>
+
+              <div class="release-group fixes">
+                <h3>Fixed</h3>
+                <ul>
+                  <li>Upgrade safety: in-place migration for <code>config/api_keys.json</code> and <code>memory/long_term.json</code> — adds/renames/preserves, never overwrites; timestamped backups before writes.</li>
+                  <li>Self-echo guard calibration prevents false barge-in triggers.</li>
+                  <li>Memory index budget prevents prompt overflow.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="release" id="v2-4-0">
+            <header class="release-head">
+              <div class="release-version">
+                <h2>v2.4.0</h2>
+              </div>
+              <time class="release-date" datetime="2026-10-16">2026-10-16</time>
+            </header>
+            <div class="release-body">
+              <p>Five roadmap capabilities shipped in one release: interrupt by voice, conversation history, full file access, security camera, and Obsidian notes.</p>
+
+              <div class="release-group">
+                <h3>Added</h3>
+                <ul>
+                  <li><b>Interrupt by voice (barge-in):</b> Talking over the assistant stops it mid-sentence. Self-echo guard decides whether mic hears room or user — won't trigger on assistant's own voice. Toggle in ⚙ → CONTROLS, on by default.</li>
+                  <li><b>Conversation history:</b> Every turn appended to <code>memory/conversation.jsonl</code> (auto-trimmed), browsable in new HISTORY panel with live search.</li>
+                  <li><b>Full file access:</b> <code>file_controller</code> gains content search, archive compress/extract (zip-slip guarded), bulk copy/move/delete, "open with OS" — all confined to safe roots, every write undoable.</li>
+                  <li><b>Security camera:</b> <code>core/security_camera.py</code> watches webcam on background thread, mean-frame-difference motion detection, saves JPEG snapshot on cooldown, speaks alert. Tool: <code>security_camera</code> (start/stop/status/list).</li>
+                  <li><b>Obsidian notes:</b> <code>actions/obsidian_notes.py</code> treats vault as Markdown folder — list, read, search, create, append, write daily note. All paths resolved and checked inside vault.</li>
+                </ul>
+              </div>
+
+              <div class="release-group">
+                <h3>Changed</h3>
+                <ul>
+                  <li><b>Third HUD centrepiece:</b> Your portrait as 3D mesh. <code>core/avatar_image.py</code> turns <code>assets/avatar.jpg</code> into real geometry — grid of vertices lifted by depth map, rotated in 3D, perspective-projected, lit, depth-sorted, drawn as shaded facets. Jaw drops on viseme schedule. Face located once with OpenCV Haar cascade (no MediaPipe, no model download). HUD cycle: <strong>Holo Head ↔ 3D Avatar ↔ Reactor Core</strong>.</li>
+                </ul>
+              </div>
+
+              <div class="release-group">
+                <h3>Tests</h3>
+                <ul>
+                  <li>Added <code>tests/test_security_camera.py</code>, <code>tests/test_obsidian_notes.py</code>, <code>tests/test_avatar_image.py</code>. Suite now 82 tests.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="release" id="v2-3-0">
+            <header class="release-head">
+              <div class="release-version">
+                <h2>v2.3.0</h2>
+              </div>
+              <time class="release-date" datetime="2026-10-15">2026-10-15</time>
+            </header>
+            <div class="release-body">
+              <p>Holographic human bust retired as HUD centrepiece. Animated head returns as default.</p>
+
+              <div class="release-group fixes">
+                <h3>Removed</h3>
+                <ul>
+                  <li><b>Holo Assistant HUD style:</b> <code>core/avatar_human.py</code>, platform bust from MediaPipe face geometry, and its headless test. Centrepiece cycle now: <strong>Animated Face ↔ Reactor Core</strong>.</li>
+                </ul>
+              </div>
+
+              <div class="release-group">
+                <h3>Changed</h3>
+                <ul>
+                  <li>Default HUD centrepiece is animated face (<code>hud_style</code> default <code>"face"</code>). Config holding <code>"holo"</code> resolves to <code>"face"</code> (no blank HUD).</li>
+                  <li>HUD style button, tooltip, and log line no longer offer/report holo assistant.</li>
+                </ul>
+              </div>
+
+              <div class="release-group">
+                <h3>Tests</h3>
+                <ul>
+                  <li>Removed <code>tests/test_avatar_human.py</code>; remaining suite covers animated face, crystalline variant, viseme reducer, echo guard, model ladder, upgrade pass.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="release" id="v2-2-0">
+            <header class="release-head">
+              <div class="release-version">
+                <h2>v2.2.0</h2>
+              </div>
+              <time class="release-date" datetime="2026-10-11">2026-10-11</time>
+            </header>
+            <div class="release-body">
+              <p>HUD centrepiece: 3D holographic human bust replaces human head as default, in Omkar-Ai neon-blue signature look.</p>
+
+              <div class="release-group">
+                <h3>Added</h3>
+                <ul>
+                  <li><b>core/avatar_human.py:</b> Realistic human bust hologram. Same real measured geometry as animated face (MediaPipe canonical face model — actual eyelids, nostrils, lips, cheekbones), reusing <code>HoloAvatar</code>'s lit-surface + wireframe renderer. Procedural loft continues neck into broad shoulder line, chest, abdomen — full bust. Lit cyan-blue on holographic projection platform (metallic disc, segmented dark-chrome panels, concentric cyan/violet LED rings, rotating sweeps, rim lights, central projector with diagonal volumetric beams). Violet partner hue derived from theme primary. Procedural/software-rendered with QPainter — no OpenGL, no GPU, no new dependency. Speaks and listens via same viseme schedule and audio level.</li>
+                  <li><b>core/avatar_crystal.py:</b> Crystalline-bust variant kept as alternate renderer — faceted shards, same platform and animation protocol.</li>
+                  <li>Third HUD centrepiece selectable in ⚙: cycle <strong>Holo Assistant → Animated Face → Reactor Core</strong>, survives restart.</li>
+                </ul>
+              </div>
+
+              <div class="release-group">
+                <h3>Changed</h3>
+                <ul>
+                  <li>Default HUD centrepiece now holographic human (<code>hud_style</code> default <code>"holo"</code>; existing users keep choice).</li>
+                </ul>
+              </div>
+
+              <div class="release-group">
+                <h3>Tests</h3>
+                <ul>
+                  <li>Added <code>tests/test_avatar_human.py</code> (silhouette reads as person, head/neck/shoulder proportions, full viseme protocol drives mouth, muting keeps it shut, renderer marks canvas) and <code>tests/test_avatar_crystal.py</code> — all headless.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="release" id="v2-1-0">
+            <header class="release-head">
+              <div class="release-version">
+                <h2>v2.1.0</h2>
+              </div>
+              <time class="release-date" datetime="2026-10-11">2026-10-11</time>
+            </header>
+            <div class="release-body">
+              <p>Upgrade safety: installing a newer version no longer risks forgetting anything the user already had.</p>
+
+              <div class="release-group">
+                <h3>Added</h3>
+                <ul>
+                  <li><b>core/upgrade.py:</b> Versioned, in-place migration for <code>config/api_keys.json</code> and <code>memory/long_term.json</code>, run at startup before any setting or memory is read. <strong>Adds</strong> and never overwrites, <strong>copies</strong> renamed keys while keeping old name, <strong>preserves</strong> unknown keys (including data written by a newer build, so downgrade is safe too).</li>
+                  <li>Timestamped backups in <code>config/backups/</code> and <code>memory/backups/</code> taken before any migration writes.</li>
+                  <li><code>last_run_version</code> recorded so app can tell user honestly that an update kept their settings and memory.</li>
+                </ul>
+              </div>
+
+              <div class="release-group">
+                <h3>Changed</h3>
+                <ul>
+                  <li>Startup runs upgrade pass before UI or memory manager touch config.</li>
+                </ul>
+              </div>
+
+              <div class="release-group">
+                <h3>Tests</h3>
+                <ul>
+                  <li>Added <code>tests/test_upgrade.py</code> covering alias migration, old-key preservation, unknown-key safety, backup creation, idempotency, and app-version recording.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="release" id="v2-0-0">
+            <header class="release-head">
+              <div class="release-version">
+                <h2>v2.0.0</h2>
+              </div>
+              <time class="release-date" datetime="2026-10-11">2026-10-11</time>
+            </header>
+            <div class="release-body">
+              <p>Rebranded the project to <strong>Omkar-Ai</strong> and laid down the version foundation.</p>
+
+              <div class="release-group">
+                <h3>Added</h3>
+                <ul>
+                  <li>A real numeric version, surfaced in window title and header badge.</li>
+                </ul>
+              </div>
+
+              <div class="release-group">
+                <h3>Changed</h3>
+                <ul>
+                  <li><code>APP_NAME</code> / <code>APP_VERSION</code> / <code>APP_RELEASE</code> in <code>ui.py</code> are now single source of truth for release identity (title, badge, dashboard, readme).</li>
+                  <li>Live conversation model from one constant (<code>core/gemini.py</code> <code>LIVE_MODELS[0]</code>); <code>main.py</code> no longer keeps second copy that could drift.</li>
+                  <li>README and roadmap rewritten without edition labels or third-party creator credits.</li>
+                </ul>
+              </div>
+
+              <div class="release-group fixes">
+                <h3>Removed</h3>
+                <ul>
+                  <li>Last unrelated assistant branding from previous project (dashboard logo and HUD subtitle tagline).</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="page-cta" data-reveal>
+      <h2>Running an older version?</h2>
+      <p>Download v3.0.0 to get Hermes Mind, Stonic Body, subagents, MCP, and the full safety suite.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary btn-lg" href="downloads/Omkar-Ai-Setup-3.0.0.exe" download>
+          <svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg>
+          Download v3.0.0 (97 MB)
+        </a>
+        <a class="btn btn-secondary btn-lg" href="downloads/Omkar-Ai-3.0.0-portable.zip" download>
+          <svg class="icon" aria-hidden="true"><use href="#i-archive"></use></svg>
+          Portable ZIP (130 MB)
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" aria-label="Omkar-Ai home">
+            <img src="assets/img/logo.svg" alt="" width="34" height="34">
+            <span class="brand-text">OMKAR<span>-AI</span></span>
+          </a>
+          <p>A voice-first, OS-level AI assistant with persistent memory, real desktop control, and a safety net that treats permission as a feature.</p>
+          <span class="footer-version"><i></i> v3.0.0 · WINDOWS</span>
+        </div>
+        <div class="footer-col">
+          <h3>Product</h3>
+          <a href="features.html">Features</a>
+          <a href="download.html">Download</a>
+          <a href="changelog.html">Changelog</a>
+          <a href="docs.html">Documentation</a>
+        </div>
+        <div class="footer-col">
+          <h3>Company</h3>
+          <a href="about.html">About</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+        </div>
+        <div class="footer-cta">
+          <p>Bring the mind to your machine. Free for personal use.</p>
+          <a class="btn btn-primary" href="downloads/Omkar-Ai-Setup-3.0.0.exe" download>
+            <svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg>
+            Download v3.0.0
+          </a>
+          <small>97 MB · WINDOWS 10/11 · NO GPU</small>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> Omkar Chauhan. All rights reserved.</span>
+        <span>DESIGNED & BUILT BY OMKAR CHAUHAN · CC BY-NC 4.0</span>
+        <a class="back-top" href="#main">BACK TO TOP ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="assets/js/three-scene.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+# robots.txt for Omkar-Ai website
+# This site is a static marketing/download site for Omkar-Ai v3.0.0
+
+User-agent: *
+Allow: /
+
+# Sitemap (create one if you have many pages)
+# Sitemap: https://omkarchauhan.me/sitemap.xml
+
+# Crawl-delay (optional, be polite)
+Crawl-delay: 10
+
+# Disallow admin/private paths (none exist on this static site)
+# Disallow: /assets/js/
+# Disallow: /assets/css/
+# Disallow: /downloads/
+
+# The downloads folder contains large binaries - crawlers don't need to index them
+Disallow: /downloads/

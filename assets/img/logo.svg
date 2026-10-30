@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Omkar-Ai">
+  <defs>
+    <linearGradient id="g" x1="8" y1="6" x2="41" y2="43" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A9F0FF"/>
+      <stop offset=".42" stop-color="#5CE1FF"/>
+      <stop offset=".75" stop-color="#4F8CFF"/>
+      <stop offset="1" stop-color="#A78BFA"/>
+    </linearGradient>
+    <radialGradient id="core" cx=".42" cy=".38" r=".7">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset=".32" stop-color="#B9F5FF"/>
+      <stop offset=".7" stop-color="#5CE1FF"/>
+      <stop offset="1" stop-color="#3B74FF"/>
+    </radialGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="2.2" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <circle cx="24" cy="24" r="17.25" fill="none" stroke="url(#g)" stroke-width="2.4" opacity=".95"/>
+  <ellipse cx="24" cy="24" rx="21.5" ry="8.4" fill="none" stroke="url(#g)" stroke-width="1.15" opacity=".5" transform="rotate(-28 24 24)"/>
+  <circle cx="24" cy="24" r="7.1" fill="url(#core)" filter="url(#glow)"/>
+  <circle cx="21.6" cy="21.6" r="1.9" fill="#FFFFFF" opacity=".9"/>
+  <circle cx="42.2" cy="14.1" r="1.7" fill="#5CE1FF"/>
+  <circle cx="6.2" cy="32.6" r="1.2" fill="#A78BFA"/>
+</svg>

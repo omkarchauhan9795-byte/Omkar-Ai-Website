@@ -1,0 +1,23 @@
+{
+  "project": "Omkar-Ai",
+  "current_version": "3.0.0",
+  "downloads": {
+    "installer": "downloads/Omkar-Ai-Setup-3.0.0.exe",
+    "portable": "downloads/Omkar-Ai-3.0.0-portable.zip"
+  },
+  "versions": [
+    {
+      "version": "3.0.0",
+      "date": "2026-10-29",
+      "title": "First Public Release",
+      "notes": "Omkar-Ai is a free, OS-level AI assistant for Windows.",
+      "highlights": [
+        "🎤 Real-time voice with Gemini Live",
+        "🛡️ Safety Guard & Undo",
+        "🤖 Multi-agent delegation"
+      ],
+      "installer": "downloads/Omkar-Ai-Setup-3.0.0.exe",
+      "portable": "downloads/Omkar-Ai-3.0.0-portable.zip"
+    }
+  ]
+}
